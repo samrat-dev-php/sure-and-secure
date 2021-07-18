@@ -1,0 +1,9 @@
+ctrl + alt + L => Reformat code
+ctrl + D => duplicate line
+ctrl + X => cut current line
+shift + alt + up/down => move current line up/down
+ctrl + shift + N => show project files filter panel
+Multiple Selection
+    press and hold Alt and use the mouse to select the locations where a cursor is desired
+.
+

@@ -1,0 +1,226 @@
+
+class HomeController extends CI_Controller {
+
+	public function __construct() {
+        parent::__construct();
+
+		/*Load the URL helper*/ 
+// 		$this->load->helper('url'); 
+    }	
+	public function index()
+	{
+		$this->load->view('/pages/home_view');
+	}
+	public function gardening() { // off
+		$this->load->view('/pages/gardening_view');
+	 } 	
+	 public function terms() { // off
+		$this->load->view('/pages/terms_view');
+	 } 
+	 public function policy() { // off
+		$this->load->view('/pages/policy_view');
+	 }
+
+	public function apply_now() { // off
+		$this->load->view('/pages/apply_now_view');
+	 } 
+	 public function apply_now_save() { // off
+		 $this->load->model('Applynow_Model');
+		 $data = [
+			'name' => $this->input->post('applicant_name', true),
+			'father_name' => $this->input->post('father_name', true),
+			'email' => $this->input->post('email_id', true),
+			'phone' => $this->input->post('mobile_number', true),
+			'dob' => $this->input->post('dob', true),
+			'gender' => $this->input->post('gender', true), //
+			'state' => $this->input->post('plant_state', true),
+			'district' => $this->input->post('plant_district', true),
+			'pincode' => $this->input->post('pincode', true),
+			'investment_amount' => $this->input->post('investment_amount', true),
+			'delearship_type' => $this->input->post('delearship_type', true),
+			'post_date' => date("Y-m-d"),
+		 ];
+		 $isExist_Query = $this->Applynow_Model->isExistApplyForm($data['email'],$data['phone']) == 'TRUE';
+		 if($isExist_Query) {
+			$this->session->set_flashdata('issave', 'applicant already applied!');
+			redirect(base_url('apply-now')); 
+			return;
+		 }
+
+		 $insert_id = $this->Applynow_Model->add_data($data);
+		 $afftectedRows = $this->db->affected_rows();
+		 if($afftectedRows > 0) {
+			$appID= substr( str_shuffle(1236547890),0,5);
+			$applicationID="IIFCBDS-LN/".$appID.$insert_id;			
+			 $data_appid = [
+				 'applicationID' => $applicationID
+			 ];
+			 $this->Applynow_Model->update_data($data_appid, $insert_id);
+			 $this->session->set_flashdata('issave', 'application submitted!');
+			 // Send mail
+			  $mail_body = "<body>";
+    		  $mail_body .= "<table>";
+    		  $mail_body .= "<tr><td><h3>Hello ".$data['name'].", Your registeration for faranchise has been completed successfully. <h3></td></tr>";
+    		  $mail_body .= "<tr><td> Application ID: $applicationID </td></tr>";
+    		  $mail_body .= "<tr><td> Mobile No: ".$data['phone']." </td></tr>";
+    		  $mail_body .= "</table>";
+    		  $mail_body .= "</body>";
+			 $mail_data = Array(
+			 'from' => 'support@iffcobazardealership.in',
+			 'to' => $data['email'],
+			 'subject' => 'Online Faranchise Registeration',
+			 'body' => $mail_body,
+			 'pass' => 'support@2021&mail',
+    		 );
+    	  	 $this->sending($mail_data);
+    	  	 redirect(base_url('apply-now')); 
+    	  	 return;
+		 } else {
+			$this->session->set_flashdata('issave', 'something went wronng!');
+			redirect(base_url('apply-now')); 
+			return;
+		 }
+		 redirect(base_url());
+	 }
+	 public function check_status_details() { // off
+		$data = [
+			'phone' => $this->input->post('username'),
+		 ];
+		 $this->load->model('Applynow_Model');
+		 $result = $this->Applynow_Model->get_data($data);
+		if($result['count'] == 0) {
+			$this->session->set_flashdata('alert', 'No data found!');
+			redirect(base_url('home/check-status'));
+			return;
+		} else {
+			$this->load->view('/pages/check_status_details_view', $result);
+			// echo '<pre>';
+			// print_r($result);
+			// echo '</pre>';
+			return;
+		}
+		redirect(base_url('home/check-status'));
+	 }
+	 public function about_us() { // off
+		$this->load->view('/pages/about_us_view'); 
+	 } 
+	 public function login() { // off
+		$this->load->view('/pages/login_view'); 
+	 } 
+	 public function login_post() { // off
+		$data = [
+			'username' => $this->input->post('username', TRUE),
+			'password' => $this->input->post('password', TRUE),
+			'is_status' => '1'
+		 ];
+		 if($data['username'] != '' && $data['password'] != '') {
+			$this->load->model('Applynow_Model');
+			$query = $this->Applynow_Model->get_login($data);
+			$count = $query->num_rows();
+			$records = $query->result();
+	
+			if($count > 0) {
+				$sesdata = [
+					'MEMBER_ACCESS' => 'TRUE',
+					'MEMBERID' => $records[0]->id
+				];
+				$this->session->set_userdata($sesdata);
+				redirect(base_url('admin/home'));
+			} else {
+				$this->session->set_flashdata('alert', 'Opps! Wrong Password. Check before enter.');
+				redirect(base_url('login'));
+			}
+		 } else {
+			$this->session->set_flashdata('alert', 'All Fields Are Mandatory.');
+			redirect(base_url('login'));
+		 }
+		 
+		// echo '<pre>';
+		// print_r( $records[0]->id);
+		// echo '</pre>';
+		
+	 } 
+	 public function admin_home() { 
+		 $data = [
+			 'id' => $this->session->userdata('MEMBERID')
+		 ];
+		 if($data['id'] == '') {
+			redirect(base_url('login'));
+			return;
+		 }
+		 $this->load->model('Applynow_Model');
+		$query = $this->Applynow_Model->get_login_profile($data);
+		$count = $query->num_rows();
+		$records = $query->row();
+		if($count > 0) {
+			$profile = [
+				'rowsMember' => $records,
+				'page' => 'index'
+			];
+		$this->load->view('/pages/admin_home_view', $profile);
+		} else {
+			$this->session->set_flashdata('alert', 'Try again later');
+			redirect(base_url('login'));
+		}
+	 } 
+	 public function admin_signout() { 
+		$this->session->unset_userdata('MEMBERID');
+		$this->session->unset_userdata('MEMBER_ACCESS');
+		// redirect(base_url('admin/home'));
+		redirect(base_url('login'));
+	 }
+	 
+	 public function send_email() {
+	      $mail_body = "<body>";
+		  $mail_body .= "<table>";
+		  $mail_body .= "<tr><td><h3>Hello Samrat Ghosh, Your registeration for faranchise has been completed successfully.<h3></td></tr>";
+		  $mail_body .= "</table>";
+		  $mail_body .= "</body>";
+		  
+		 $data = Array(
+			 'from' => 'support@iffcobazardealership.in',
+			 'to' => 'samratg850@gmail.com',
+			 'subject' => 'Online Faranchise Registeration',
+			 'body' => $mail_body,
+			 'pass' => 'support@2021&mail',
+		 );
+	 	 $this->sending($data);
+	 	 redirect(base_url());
+	 }
+	
+	 public function sending($data) {
+		if(!empty($data)) {
+			// print_r($data);
+		}
+		$from = $data['from'];
+		$user = $data['from'];
+		$pass = $data['pass'];
+
+		$to = $data['to'];
+		$subject = $data['subject'];
+		$body = $data['body'];
+		
+		$config = Array(
+			'protocol' => 'mail',
+			'smtp_host' => 'mail.iffcobazardealership.in',
+			'smtp_port' => 465,
+			'smtp_user' => $user,
+			'smtp_pass' => $pass,
+			'smtp_timeout' => 60,
+			'mailtype'  => 'html', 
+			'charset'   => 'UTF-8',
+			'validate' => FALSE,
+			'crlf' => '\r\n',
+			'newline' => '\r\n'
+		);
+
+		// $this->load->library('email', $config);
+		$this->email->initialize($config);
+		$this->email->set_newline("\r\n");
+		$this->email->from($from,$from);
+		$this->email->to($to);
+		$this->email->subject($subject);
+		$this->email->message($body);
+		$this->email->send();
+	 }
+}

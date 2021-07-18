@@ -1,0 +1,365 @@
+div.wpforms-container-full .wpforms-form div.wpforms-field input.wpforms-error {
+	border: none
+}
+
+div.wpforms-container .wpforms-form input[type=date],
+div.wpforms-container .wpforms-form input[type=datetime],
+div.wpforms-container .wpforms-form input[type=datetime-local],
+div.wpforms-container .wpforms-form input[type=email],
+div.wpforms-container .wpforms-form input[type=month],
+div.wpforms-container .wpforms-form input[type=number],
+div.wpforms-container .wpforms-form input[type=password],
+div.wpforms-container .wpforms-form input[type=range],
+div.wpforms-container .wpforms-form input[type=search],
+div.wpforms-container .wpforms-form input[type=tel],
+div.wpforms-container .wpforms-form input[type=text],
+div.wpforms-container .wpforms-form input[type=time],
+div.wpforms-container .wpforms-form input[type=url],
+div.wpforms-container .wpforms-form input[type=week],
+div.wpforms-container .wpforms-form select,
+div.wpforms-container .wpforms-form textarea, .nf-form-cont input:not([type=button]),
+div.wpforms-container .wpforms-form .form-group.is-focused .form-control {
+	box-shadow: none
+}
+
+div.wpforms-container .wpforms-form input[type=date],
+div.wpforms-container .wpforms-form input[type=datetime],
+div.wpforms-container .wpforms-form input[type=datetime-local],
+div.wpforms-container .wpforms-form input[type=email],
+div.wpforms-container .wpforms-form input[type=month],
+div.wpforms-container .wpforms-form input[type=number],
+div.wpforms-container .wpforms-form input[type=password],
+div.wpforms-container .wpforms-form input[type=range],
+div.wpforms-container .wpforms-form input[type=search],
+div.wpforms-container .wpforms-form input[type=tel],
+div.wpforms-container .wpforms-form input[type=text],
+div.wpforms-container .wpforms-form input[type=time],
+div.wpforms-container .wpforms-form input[type=url],
+div.wpforms-container .wpforms-form input[type=week],
+div.wpforms-container .wpforms-form select,
+div.wpforms-container .wpforms-form textarea, .nf-form-cont input:not([type=button]) {
+	background-image: linear-gradient(#9c27b0, #9c27b0), linear-gradient(#d2d2d2, #d2d2d2);
+	float: none;
+	border: 0;
+	border-radius: 0;
+	background-color: transparent;
+	background-repeat: no-repeat;
+	background-position: center bottom, center calc(100% - 1px);
+	background-size: 0 2px, 100% 1px;
+	font-weight: 400;
+	transition: background 0s ease-out
+}
+
+div.wpforms-container .wpforms-form .form-group.is-focused .form-control {
+	outline: none;
+	background-size: 100% 2px, 100% 1px;
+	transition-duration: .3s
+}
+
+div.wpforms-container .wpforms-form input[type="date"].form-control, div.wpforms-container .wpforms-form input[type="datetime"].form-control, div.wpforms-container .wpforms-form input[type="datetime-local"].form-control, div.wpforms-container .wpforms-form input[type="email"].form-control, div.wpforms-container .wpforms-form input[type="month"].form-control, div.wpforms-container .wpforms-form input[type="number"].form-control, div.wpforms-container .wpforms-form input[type="password"].form-control, div.wpforms-container .wpforms-form input[type="range"].form-control, div.wpforms-container .wpforms-form input[type="search"].form-control, div.wpforms-container .wpforms-form input[type="tel"].form-control, div.wpforms-container .wpforms-form input[type="text"].form-control, div.wpforms-container .wpforms-form input[type="time"].form-control, div.wpforms-container .wpforms-form input[type="url"].form-control, div.wpforms-container .wpforms-form input[type="week"].form-control, div.wpforms-container .wpforms-form select.form-control, div.wpforms-container .wpforms-form textarea.form-control {
+	border: none;
+	padding: 7px 0;
+	font-size: 14px
+}
+
+div.wpforms-container .wpforms-form .wpforms-field-select select {
+	border-radius: 3px
+}
+
+div.wpforms-container .wpforms-form .wpforms-field-number input[type="number"] {
+	background-image: none;
+	border-radius: 3px
+}
+
+div.wpforms-container .wpforms-form button[type="submit"].wpforms-submit, div.wpforms-container .wpforms-form button[type="submit"].wpforms-submit:hover {
+	color: #fff;
+	border: none
+}
+
+.home div.wpforms-container-full .wpforms-form {
+	margin-left: 15px;
+	margin-right: 15px
+}
+
+div.wpforms-container-full .wpforms-form .wpforms-field {
+	padding: 0 0 24px 0 !important
+}
+
+div.wpforms-container-full .wpforms-form .wpforms-submit-container {
+	text-align: right
+}
+
+div.wpforms-container-full .wpforms-form .wpforms-submit-container button {
+	text-transform: uppercase
+}
+
+div.wpforms-container-full .wpforms-form textarea {
+	border: none !important
+}
+
+div.wpforms-container-full .wpforms-form textarea:focus {
+	border-width: 0 0 0 0 !important
+}
+
+.home div.wpforms-container .wpforms-form textarea {
+	background-image: linear-gradient(#9c27b0, #9c27b0), linear-gradient(#d2d2d2, #d2d2d2);
+	background-color: transparent;
+	background-repeat: no-repeat;
+	background-position: center bottom, center calc(100% - 1px);
+	background-size: 0 2px, 100% 1px
+}
+
+@media only screen and (max-width: 768px) {
+	.wpforms-container-full .wpforms-form .wpforms-one-half, .wpforms-container-full .wpforms-form button {
+		width: 100% !important;
+		margin-left: 0 !important
+	}
+
+	.wpforms-container-full .wpforms-form .wpforms-submit-container {
+		text-align: center
+	}
+}
+
+div.wpforms-container .wpforms-form input:focus, div.wpforms-container .wpforms-form select:focus {
+	border: none
+}
+
+.elementor-page .hestia-about > .container {
+	width: 100%
+}
+
+.elementor-page .pagebuilder-section {
+	padding: 0
+}
+
+.elementor-page .title-in-content, .elementor-page .image-in-page {
+	display: none
+}
+
+.home.elementor-page .main-raised > section.hestia-about {
+	overflow: visible
+}
+
+.elementor-editor-active .navbar {
+	pointer-events: none
+}
+
+.elementor-editor-active #elementor.elementor-edit-mode .elementor-element-overlay {
+	z-index: 1000000
+}
+
+.elementor-page.page-template-template-fullwidth .blog-post-wrapper > .container {
+	width: 100%
+}
+
+.elementor-page.page-template-template-fullwidth .blog-post-wrapper > .container .col-md-12 {
+	padding: 0
+}
+
+.elementor-page.page-template-template-fullwidth article.section {
+	padding: 0
+}
+
+.elementor-text-editor p, .elementor-text-editor h1, .elementor-text-editor h2, .elementor-text-editor h3, .elementor-text-editor h4, .elementor-text-editor h5, .elementor-text-editor h6 {
+	font-size: inherit
+}
+
+.hestia-top-bar, .hestia-top-bar .widget.widget_shopping_cart .cart_list {
+	background-color: #363537
+}
+
+.hestia-top-bar .widget .label-floating input[type="search"]:-webkit-autofill {
+	-webkit-box-shadow: inset 0 0 0 9999px #363537
+}
+
+.hestia-top-bar, .hestia-top-bar .widget .label-floating input[type="search"], .hestia-top-bar .widget.widget_search form.form-group:before, .hestia-top-bar .widget.widget_product_search form.form-group:before, .hestia-top-bar .widget.widget_shopping_cart:before {
+	color: #fff
+}
+
+.hestia-top-bar .widget .label-floating input[type="search"] {
+	-webkit-text-fill-color: #fff !important
+}
+
+.hestia-top-bar div.widget.widget_shopping_cart:before, .hestia-top-bar .widget.widget_product_search form.form-group:before, .hestia-top-bar .widget.widget_search form.form-group:before {
+	background-color: #fff
+}
+
+.hestia-top-bar a, .hestia-top-bar .top-bar-nav li a {
+	color: #fff
+}
+
+.hestia-top-bar ul li a[href*="mailto:"]:before, .hestia-top-bar ul li a[href*="tel:"]:before {
+	background-color: #fff
+}
+
+.hestia-top-bar a:hover, .hestia-top-bar .top-bar-nav li a:hover {
+	color: #eee
+}
+
+.hestia-top-bar ul li:hover a[href*="mailto:"]:before, .hestia-top-bar ul li:hover a[href*="tel:"]:before {
+	background-color: #eee
+}
+
+a,
+.navbar .dropdown-menu li:hover > a,
+.navbar .dropdown-menu li:focus > a,
+.navbar .dropdown-menu li:active > a,
+.navbar .navbar-nav > li .dropdown-menu li:hover > a,
+body:not(.home) .navbar-default .navbar-nav > .active:not(.btn) > a,
+body:not(.home) .navbar-default .navbar-nav > .active:not(.btn) > a:hover,
+body:not(.home) .navbar-default .navbar-nav > .active:not(.btn) > a:focus,
+a:hover,
+.card-blog a.moretag:hover,
+.card-blog a.more-link:hover,
+.widget a:hover,
+.has-text-color.has-accent-color,
+p.has-text-color a {
+	color: #bb0d0d
+}
+
+.svg-text-color {
+	fill: #bb0d0d
+}
+
+.pagination span.current, .pagination span.current:focus, .pagination span.current:hover {
+	border-color: #bb0d0d
+}
+
+button,
+button:hover,
+.woocommerce .track_order button[type="submit"],
+.woocommerce .track_order button[type="submit"]:hover,
+div.wpforms-container .wpforms-form button[type=submit].wpforms-submit,
+div.wpforms-container .wpforms-form button[type=submit].wpforms-submit:hover,
+input[type="button"],
+input[type="button"]:hover,
+input[type="submit"],
+input[type="submit"]:hover,
+input#searchsubmit,
+.pagination span.current,
+.pagination span.current:focus,
+.pagination span.current:hover,
+.btn.btn-primary,
+.btn.btn-primary:link,
+.btn.btn-primary:hover,
+.btn.btn-primary:focus,
+.btn.btn-primary:active,
+.btn.btn-primary.active,
+.btn.btn-primary.active:focus,
+.btn.btn-primary.active:hover,
+.btn.btn-primary:active:hover,
+.btn.btn-primary:active:focus,
+.btn.btn-primary:active:hover,
+.hestia-sidebar-open.btn.btn-rose,
+.hestia-sidebar-close.btn.btn-rose,
+.hestia-sidebar-open.btn.btn-rose:hover,
+.hestia-sidebar-close.btn.btn-rose:hover,
+.hestia-sidebar-open.btn.btn-rose:focus,
+.hestia-sidebar-close.btn.btn-rose:focus,
+.label.label-primary,
+.hestia-work .portfolio-item:nth-child(6n+1) .label,
+.nav-cart .nav-cart-content .widget .buttons .button,
+.has-accent-background-color[class*="has-background"] {
+	background-color: #bb0d0d
+}
+
+@media (max-width: 768px) {
+	.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus, .navbar .navbar-nav .dropdown .dropdown-menu li a:hover, .navbar .navbar-nav .dropdown .dropdown-menu li a:focus, .navbar button.navbar-toggle:hover, .navbar .navbar-nav li:hover > a i {
+		color: #bb0d0d
+	}
+}
+
+body:not(.woocommerce-page) button:not([class^="fl-"]):not(.hestia-scroll-to-top):not(.navbar-toggle):not(.close),
+body:not(.woocommerce-page) .button:not([class^="fl-"]):not(hestia-scroll-to-top):not(.navbar-toggle):not(.add_to_cart_button),
+div.wpforms-container .wpforms-form button[type=submit].wpforms-submit,
+input[type="submit"],
+input[type="button"],
+.btn.btn-primary,
+.widget_product_search button[type="submit"],
+.hestia-sidebar-open.btn.btn-rose,
+.hestia-sidebar-close.btn.btn-rose,
+.everest-forms button[type=submit].everest-forms-submit-button {
+	-webkit-box-shadow: 0 2px 2px 0 rgba(187, 13, 13, .14), 0 3px 1px -2px rgba(187, 13, 13, .2), 0 1px 5px 0 rgba(187, 13, 13, .12);
+	box-shadow: 0 2px 2px 0 rgba(187, 13, 13, .14), 0 3px 1px -2px rgba(187, 13, 13, .2), 0 1px 5px 0 rgba(187, 13, 13, .12)
+}
+
+.card .header-primary, .card .content-primary, .everest-forms button[type="submit"].everest-forms-submit-button {
+	background: #bb0d0d
+}
+
+body:not(.woocommerce-page) .button:not([class^="fl-"]):not(.hestia-scroll-to-top):not(.navbar-toggle):not(.add_to_cart_button):hover,
+body:not(.woocommerce-page) button:not([class^="fl-"]):not(.hestia-scroll-to-top):not(.navbar-toggle):not(.close):hover,
+div.wpforms-container .wpforms-form button[type=submit].wpforms-submit:hover,
+input[type="submit"]:hover,
+input[type="button"]:hover,
+input#searchsubmit:hover,
+.widget_product_search button[type="submit"]:hover,
+.pagination span.current,
+.btn.btn-primary:hover,
+.btn.btn-primary:focus,
+.btn.btn-primary:active,
+.btn.btn-primary.active,
+.btn.btn-primary:active:focus,
+.btn.btn-primary:active:hover,
+.hestia-sidebar-open.btn.btn-rose:hover,
+.hestia-sidebar-close.btn.btn-rose:hover,
+.pagination span.current:hover,
+.everest-forms button[type=submit].everest-forms-submit-button:hover,
+.everest-forms button[type=submit].everest-forms-submit-button:focus,
+.everest-forms button[type=submit].everest-forms-submit-button:active {
+	-webkit-box-shadow: 0 14px 26px -12px rgba(187, 13, 13, .42), 0 4px 23px 0 rgba(0, 0, 0, .12), 0 8px 10px -5px rgba(187, 13, 13, .2);
+	box-shadow: 0 14px 26px -12px rgba(187, 13, 13, .42), 0 4px 23px 0 rgba(0, 0, 0, .12), 0 8px 10px -5px rgba(187, 13, 13, .2);
+	color: #fff
+}
+
+.form-group.is-focused .form-control {
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#bb0d0d), to(#bb0d0d)), -webkit-gradient(linear, left top, left bottom, from(#d2d2d2), to(#d2d2d2));
+	background-image: -webkit-linear-gradient(linear, left top, left bottom, from(#bb0d0d), to(#bb0d0d)), -webkit-linear-gradient(linear, left top, left bottom, from(#d2d2d2), to(#d2d2d2));
+	background-image: linear-gradient(linear, left top, left bottom, from(#bb0d0d), to(#bb0d0d)), linear-gradient(linear, left top, left bottom, from(#d2d2d2), to(#d2d2d2))
+}
+
+.navbar:not(.navbar-transparent) li:not(.btn):hover > a,
+.navbar li.on-section:not(.btn) > a,
+.navbar.full-screen-menu.navbar-transparent li:not(.btn):hover > a,
+.navbar.full-screen-menu .navbar-toggle:hover,
+.navbar:not(.navbar-transparent) .nav-cart:hover,
+.navbar:not(.navbar-transparent) .hestia-toggle-search:hover {
+	color: #bb0d0d
+}
+
+.header-filter-gradient {
+	background: linear-gradient(45deg, rgba(168, 29, 132, 1) 0%, #ea396f 100%)
+}
+
+.has-text-color.has-header-gradient-color {
+	color: #a81d84
+}
+
+.has-header-gradient-background-color[class*="has-background"] {
+	background-color: #a81d84;
+}
+
+.has-text-color.has-background-color-color {
+	color: #e5e5e5
+}
+
+.has-background-color-background-color[class*="has-background"] {
+	background-color: #e5e5e5
+}
+
+.btn.btn-primary:not(.colored-button):not(.btn-left):not(.btn-right):not(.btn-just-icon):not(.menu-item), input[type="submit"]:not(.search-submit), body:not(.woocommerce-account) .woocommerce .button.woocommerce-Button, .woocommerce .product button.button, .woocommerce .product button.button.alt, .woocommerce .product #respond input#submit, .woocommerce-cart .blog-post .woocommerce .cart-collaterals .cart_totals .checkout-button, .woocommerce-checkout #payment #place_order, .woocommerce-account.woocommerce-page button.button, .woocommerce .track_order button[type="submit"], .nav-cart .nav-cart-content .widget .buttons .button, .woocommerce a.button.wc-backward, body.woocommerce .wccm-catalog-item a.button, body.woocommerce a.wccm-button.button, form.woocommerce-form-coupon button.button, div.wpforms-container .wpforms-form button[type=submit].wpforms-submit, div.woocommerce a.button.alt, div.woocommerce table.my_account_orders .button, .btn.colored-button, .btn.btn-left, .btn.btn-right, .btn:not(.colored-button):not(.btn-left):not(.btn-right):not(.btn-just-icon):not(.menu-item):not(.hestia-sidebar-open):not(.hestia-sidebar-close) {
+	padding-top: 15px;
+	padding-bottom: 15px;
+	padding-left: 33px;
+	padding-right: 33px
+}
+
+.btn.btn-primary:not(.colored-button):not(.btn-left):not(.btn-right):not(.btn-just-icon):not(.menu-item), input[type="submit"]:not(.search-submit), body:not(.woocommerce-account) .woocommerce .button.woocommerce-Button, .woocommerce .product button.button, .woocommerce .product button.button.alt, .woocommerce .product #respond input#submit, .woocommerce-cart .blog-post .woocommerce .cart-collaterals .cart_totals .checkout-button, .woocommerce-checkout #payment #place_order, .woocommerce-account.woocommerce-page button.button, .woocommerce .track_order button[type="submit"], .nav-cart .nav-cart-content .widget .buttons .button, .woocommerce a.button.wc-backward, body.woocommerce .wccm-catalog-item a.button, body.woocommerce a.wccm-button.button, form.woocommerce-form-coupon button.button, div.wpforms-container .wpforms-form button[type=submit].wpforms-submit, div.woocommerce a.button.alt, div.woocommerce table.my_account_orders .button, input[type="submit"].search-submit, .hestia-view-cart-wrapper .added_to_cart.wc-forward, .woocommerce-product-search button, .woocommerce-cart .actions .button, #secondary div[id^=woocommerce_price_filter] .button, .woocommerce div[id^=woocommerce_widget_cart].widget .buttons .button, .searchform input[type=submit], .searchform button, .search-form:not(.media-toolbar-primary) input[type=submit], .search-form:not(.media-toolbar-primary) button, .woocommerce-product-search input[type=submit], .btn.colored-button, .btn.btn-left, .btn.btn-right, .btn:not(.colored-button):not(.btn-left):not(.btn-right):not(.btn-just-icon):not(.menu-item):not(.hestia-sidebar-open):not(.hestia-sidebar-close) {
+	border-radius: 3px
+}
+
+@media (min-width: 769px) {
+	.page-header.header-small .hestia-title, .page-header.header-small .title, h1.hestia-title.title-in-content, .main article.section .has-title-font-size {
+		font-size: 42px
+	}
+}

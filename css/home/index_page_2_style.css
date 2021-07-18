@@ -1,0 +1,55 @@
+.ma-el-page-scroll-indicator {
+	background: #fff
+}
+
+.ma-el-scroll-indicator {
+	background: #007bff
+}
+
+.ma-el-page-scroll-indicator, .ma-el-scroll-indicator {
+	height: 5px
+}
+
+.no-js img.lazyload {
+	display: none
+}
+
+figure.wp-block-image img.lazyloading {
+	min-width: 150px
+}
+
+.lazyload, .lazyloading {
+	opacity: 0
+}
+
+.lazyloaded {
+	opacity: 1;
+	transition: opacity 400ms;
+	transition-delay: 0ms
+}
+
+.recentcomments a {
+	display: inline !important;
+	padding: 0 !important;
+	margin: 0 !important
+}
+
+#bitnami-banner {
+	display: none
+}
+
+footer.footer.footer-black.footer-big {
+	background: #1d3b65
+}
+
+ul.footer-menu.pull-left {
+	display: none !important
+}
+
+@media (max-width: 767px) {
+	button#wpforms-submit-802 {
+		width: auto !important;
+		margin: auto !important;
+		display: block
+	}
+}
