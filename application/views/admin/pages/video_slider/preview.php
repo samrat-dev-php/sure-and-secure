@@ -1,9 +1,10 @@
+<div id="edit_model"></div>
 <div class="row vslider">
 	<?php if (isset($rows)): ?>
 		<?php foreach ($rows as $row): ?>
 			<?php
 			$thumb = base_url('thumb_images/') . $row->filename . '.png';
-			$video = base_url('upload/') . $row->filename;
+			$video = base_url('upload/') . $row->filename . '.mp4';
 			?>
 			<div class="col-sm-12 col-md-6 col-lg-4" card-id="<?php echo $row->id; ?>">
 				<div class="card">
@@ -23,8 +24,8 @@
 <!--																						 aria-hidden="true"></i></i></a>-->
 <!--						<a href="#" class="btn btn-outline-secondary" title="move down"><i class="fa fa-chevron-up"-->
 <!--																						   aria-hidden="true"></i></a>-->
-<!--						<a href="#" class="btn btn-outline-secondary" title="edit"><i class="fa fa-pencil"-->
-<!--																					  aria-hidden="true"></i></a>-->
+						<a href="#" class="btn btn-outline-secondary" edit-video title="edit"><i class="fa fa-pencil"
+																					  aria-hidden="true"></i></a>
 						<a href="#" class="btn btn-outline-danger" delete-video title="remove"><i class="fa fa-trash"
 																					 aria-hidden="true"></i></a>
 					</div>

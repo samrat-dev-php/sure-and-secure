@@ -2,57 +2,108 @@
 	.img01 {
 		/*visibility: hidden;*/
 	}
+
 	#snap {
 		height: 0;
 		overflow: hidden;
 	}
 
+	#edit_model {
+		position: absolute;
+		z-index: 999;
+		width: 100%;
+		height: 100%;
+		background: #0000002e;
+		backdrop-filter: blur(3px);
+	}
 </style>
 <div class="row">
-	<div class="col-sm-12 col-md-6 col-lg-6">
+	<div class="col-sm-12 col-md-6 col-lg-6 mx-auto">
 		<div class="card mt-2 w-100">
 			<div class="wait">
 				<div style="width: 100%">
 					<div class="text-center"> Please wait...</div>
 					<div class="progress">
-						<div class="progress-bar bg-success" id="upload_progress" role="progressbar" style="width: 0%" aria-valuenow="25"
+						<div class="progress-bar bg-success" id="upload_progress" role="progressbar" style="width: 0%"
+							 aria-valuenow="25"
 							 aria-valuemin="0" aria-valuemax="100"></div>
 					</div>
 				</div>
 			</div>
 			<div class="card-body">
-				<form id="vslider_form" enctype="multipart/form-data" method="post"
-					  action="<?php echo base_url(""); ?>admin/video-slider/add_post">
-					<div class="row">
-						<h4 class="text-center w-100">Add Video slider</h4>
-					</div>
-					<label for="basic-url" class="form-label">Title</label>
-					<div class="input-group mb-3">
-						<input type="text" class="form-control" id="vslider_title" name="vslider_title"
-							   placeholder="title"
-							   aria-describedby="basic-addon3">
-					</div>
-					<label for="basic-url" class="form-label">Select Video File</label>
-					<div class="mb-3">
-						<input class="form-control" type="file" id="vslider_file" name="vslider_file"
-							   accept="video/mp4,video/x-m4v,video/*" style="padding:0;">
-					</div>
-					<label for="basic-url" class="form-label">Description</label>
-					<div class="input-group mb-3">
+				<?php if (isset($row)) { ?>
+					<form id="vslider_form_update" enctype="multipart/form-data" method="post"
+						  action="<?php echo base_url(""); ?>admin/video-slider/update_post">
+						<div class="row">
+							<h4 class="text-center w-100">Update Video slider</h4>
+						</div>
+						<label for="basic-url" class="form-label">Title</label>
+						<div class="input-group mb-3">
+							<input type="text" class="form-control" value="<?php echo $row[0]->title; ?>"
+								   id="vslider_title"
+								   name="vslider_title"
+								   placeholder="title"
+								   aria-describedby="basic-addon3">
+						</div>
+						<label for="basic-url" class="form-label">Select Video File</label>
+						<div class="mb-3">
+							<input class="form-control" type="file" id="vslider_file" name="vslider_file"
+								   accept="video/mp4,video/x-m4v,video/*" style="padding:0;">
+						</div>
+						<label for="basic-url" class="form-label">Select Video Thumbnail</label>
+						<div class="mb-3">
+							<input class="form-control" type="file" id="vslider_filethumb" name="vslider_filethumb"
+								   accept="image/*" style="padding:0;">
+						</div>
+						<label for="basic-url" class="form-label">Description</label>
+						<div class="input-group mb-3">
+						<textarea class="form-control" id="vslider_desc" name="vslider_desc" aria-label="With textarea"
+								  style="resize: none"><?php echo $row[0]->vdesc; ?></textarea>
+						</div>
+						<input type="hidden" name="id" value="<?php echo $row[0]->id; ?>"/>
+						<input type="hidden" name="filename" value="<?php echo $row[0]->filename; ?>"/>
+
+<!--						<button type="submit" class="btn btn-primary" id="save_slider">Update</button>-->
+						<div id="snap"></div>
+					</form>
+				<?php } else { ?>
+					<form id="vslider_form" enctype="multipart/form-data" method="post"
+						  action="<?php echo base_url(""); ?>admin/video-slider/add_post">
+						<div class="row">
+							<h4 class="text-center w-100">Add Video slider</h4>
+						</div>
+						<label for="basic-url" class="form-label">Title</label>
+						<div class="input-group mb-3">
+							<input type="text" class="form-control" id="vslider_title" name="vslider_title"
+								   placeholder="title"
+								   aria-describedby="basic-addon3">
+						</div>
+						<label for="basic-url" class="form-label">Select Video File</label>
+						<div class="mb-3">
+							<input class="form-control" type="file" id="vslider_file" name="vslider_file"
+								   accept="video/mp4,video/x-m4v,video/*" style="padding:0;">
+						</div>
+						<label for="basic-url" class="form-label">Select Video Thumbnail</label>
+						<div class="mb-3">
+							<input class="form-control" type="file" id="vslider_filethumb" name="vslider_filethumb"
+								   accept="image/*" style="padding:0;">
+						</div>
+						<label for="basic-url" class="form-label">Description</label>
+						<div class="input-group mb-3">
 						<textarea class="form-control" id="vslider_desc" name="vslider_desc" aria-label="With textarea"
 								  style="resize: none"></textarea>
-					</div>
-					<button type="submit" class="btn btn-primary" id="save_slider">Save</button>
-					<div id="snap"></div>
-				</form>
+						</div>
+						<button type="submit" class="btn btn-primary" id="save_slider">Save</button>
+						<div id="snap"></div>
+					</form>
+				<?php } ?>
+
 			</div>
 		</div>
 	</div>
-	<div class="col-sm-12 col-md-6 col-lg-6">
-	</div>
 </div>
 <script>
-	function clearForm(){
+	function clearForm() {
 		$('#vslider_title').val('');
 		$('#vslider_desc').val('');
 		$('#vslider_file').val('');
@@ -82,7 +133,7 @@
 						xhr.upload.addEventListener("progress", function (evt) {
 							if (evt.lengthComputable) {
 								var percentComplete = (evt.loaded / evt.total) * 100;
-								$("#upload_progress").css('width',`${percentComplete}%`);
+								$("#upload_progress").css('width', `${percentComplete}%`);
 								// console.log(percentComplete);
 								// Place upload progress bar visibility code here
 							}
@@ -99,13 +150,13 @@
 					$.notify("Data saved successfully", "success");
 					// console.log(res);
 					$("div.wait").css("display", "none");
-					$("#upload_progress").css('width',`0%`);
+					$("#upload_progress").css('width', `0%`);
 					clearForm();
 				}).fail(function (err) {
 					$.notify("Error occurs", "error");
-					// console.log(err.responseText);
+					console.log(err.responseText);
 					$("div.wait").css("display", "none");
-					$("#upload_progress").css('width',`0%`);
+					$("#upload_progress").css('width', `0%`);
 					clearForm();
 				});
 			}
@@ -114,7 +165,7 @@
 
 		$('#vslider_file').on('change', function (e) {
 			// let file = $(this).get(0).files[0];
-			$("#save_slider").attr('disabled','disabled');
+			$("#save_slider").attr('disabled', 'disabled');
 			var file = e.target.files[0];
 			let thumbSize = {
 				x: '665',

@@ -46,7 +46,14 @@ class Home_Model extends CI_Model
 		$data = $query->result();
 		return $data;
 	}
-
+	public function videoSliderPreviewById($id){
+		$this->db->select('*');
+		$this->db->from('vslider');
+		$this->db->where('id', $id);
+		$query = $this->db->get();
+		$data = $query->result();
+		return $data;
+	}
 	public function videoSliderDelete($id)
 	{
 		$sql = "SELECT filename FROM `vslider` where id=" . $id;
@@ -55,7 +62,7 @@ class Home_Model extends CI_Model
 		if (count($data) > 0) {
 			if (!empty($data[0]['filename'])) {
 				$thumb = $_SERVER['DOCUMENT_ROOT'] . my_root_folder . 'thumb_images/' . $data[0]['filename'] . '.png';
-				$file = $_SERVER['DOCUMENT_ROOT'] . my_root_folder . 'upload/' . $data[0]['filename'];
+				$file = $_SERVER['DOCUMENT_ROOT'] . my_root_folder . 'upload/' . $data[0]['filename'] . '.mp4';
 				unlink($thumb);
 				unlink($file);
 				$this->db->where('id', $id);

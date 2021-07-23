@@ -79,6 +79,7 @@ $route['admin/dashboard'] = 'AdminController';
 $route['admin/video-slider/add'] = 'AdminController/videoSliderAdd';
 $route['admin/video-slider/add_post'] = 'AdminController/videoSliderAdd_post';
 $route['admin/video-slider/delete/(:any)'] = 'AdminController/videoSliderDelete/$1';
+$route['admin/video-slider/edit/(:any)'] = 'AdminController/videoSliderEdit/$1';
 $route['admin/video-slider/preview'] = 'AdminController/videoSliderPreview';
 
 $route['send_email'] = 'HomeController/send_email';

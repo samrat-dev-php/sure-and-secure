@@ -160,6 +160,31 @@ defined('BASEPATH') or exit('No direct script access allowed');
 			});
 			// console.log(_url);
 		});
+		$("[edit-video]").on('click', function () {
+			var target = $(this).closest("div.card").get(0);
+			var vid = $(".card-img-top", target).attr("video-id");
+			var _url = "<?php echo base_url(""); ?>admin/video-slider/edit/" + vid;
+			$("div.wait").css("display", "flex");
+			$.ajax({
+				url: _url,
+				method: "POST",
+				contentType: false,
+				cache: false,
+				processData: false,
+				data: {}
+			}).done(function (res) {
+				// $.notify("Data saved successfully", "success");
+				console.log(res);
+				// $("#edit_model").html(res);
+				$("div.wait").css("display", "none");
+				// $(`[card-id=${vid}]`).remove();
+			}).fail(function (err) {
+				// $.notify("Error occurs", "error");
+				console.log(err.responseText);
+				$("div.wait").css("display", "none");
+			});
+			console.log(_url);
+		});
 	});
 </script>
 

@@ -75,9 +75,14 @@ class AdminController extends CI_Controller
 		$t = time();
 		$d = date("Ymd");
 		$len = strlen($name);
-		$ext = substr($name, $len - 3);
-		$autogen_name = 'v' . $d . $t . '.' . $ext;
+		$autogen_name = 'v' . $d . $t;
 		return $autogen_name;
+	}
+
+	public function _getFileExt($fileName)
+	{
+		$ext = pathinfo($fileName, PATHINFO_EXTENSION);
+		return $ext;
 	}
 
 	public function videoSliderAdd_post()
@@ -87,11 +92,13 @@ class AdminController extends CI_Controller
 		$vslider_desc = $this->input->post('vslider_desc');
 		$thumb = $this->input->post('thumb');
 		$vslider_file = $_FILES['vslider_file'];
+		$vslider_file_thumb = $_FILES['vslider_filethumb'];
 
 		if (empty($vslider_title) || empty($vslider_file)) {
 			echo "Please fill the form !!";
 		} else {
 			$vslider_name = $vslider_file["name"];
+			$vslider_file_thumbname = $vslider_file_thumb["name"];
 			$vslider_tmp_name = $vslider_file["tmp_name"];
 			$vslider_size = $vslider_file["size"];
 			$vslider_type = $vslider_file["type"];
@@ -100,13 +107,22 @@ class AdminController extends CI_Controller
 			$config['upload_path'] = './upload/';
 			$config['allowed_types'] = 'mp4';
 			$config['overwrite'] = TRUE;
-			$config['file_name'] = $autogen_filename;
-
+			$config['file_name'] = $autogen_filename . '.' . $this->_getFileExt($vslider_name);;
+//			print_r($config);
 			$this->load->library('upload', $config);
 			$this->upload->do_upload('vslider_file');
 			$im_name = $this->upload->data();
 
-			if (!empty($thumb)) {
+			// thumbnails
+			if (!empty($vslider_file_thumbname)) {
+				$config['upload_path'] = './thumb_images/';
+				$config['allowed_types'] = 'gif|jpg|png|jpeg';
+				$config['file_name'] = $autogen_filename . '.png';
+//				print_r($config);
+				$this->upload->initialize($config);
+				$this->upload->do_upload('vslider_filethumb');
+				$im_name = $this->upload->data();
+			} else if (!empty($thumb)) {
 				//echo $thumb;
 				define('UPLOAD_DIR_THUMB', 'thumb_images/');
 				$thumb = str_replace('data:image/png;base64,', '', $thumb);
@@ -124,6 +140,7 @@ class AdminController extends CI_Controller
 			);
 			$insert_query = $this->Home_Model->videoSliderAdd_post($data);
 //			echo print_r($data);
+
 			echo "data saved successfully.";
 		}
 
@@ -137,12 +154,24 @@ class AdminController extends CI_Controller
 			$data['rows'] = $data;
 //			print_r($data);
 		}
-		$this->load->view('/admin/pages/video_slider/preview_view',$data);
+		$this->load->view('/admin/pages/video_slider/preview_view', $data);
 	}
-	public function videoSliderDelete($id) {
+
+	public function videoSliderDelete($id)
+	{
+		$this->cklogin();
 		$this->Home_Model->videoSliderDelete($id);
 		echo 'data deleted successfully';
-
+	}
+	public function videoSliderEdit($id)
+	{
+		$this->cklogin();
+		$data = $this->Home_Model->videoSliderPreviewById($id);
+		$data['row'] = $data;
+//		echo "<pre>";
+//		print_r($data);
+//		echo "</pre>";
+		$this->load->view('/admin/pages/video_slider/add', $data);
 	}
 
 }
