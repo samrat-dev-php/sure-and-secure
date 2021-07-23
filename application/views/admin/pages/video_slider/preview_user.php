@@ -97,7 +97,7 @@
 				<?php foreach ($slider_rows as $row): ?>
 					<?php
 					$thumb = base_url('thumb_images/') . $row->filename . '.png';
-					$video = base_url('upload/') . $row->filename;
+					$video = base_url('upload/') . $row->filename . '.mp4';
 					?>
 					<div class="col-auto slider-wrap">
 						<div class="card slider-card1" thumbnail-src="<?php echo $thumb; ?>">
