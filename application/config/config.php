@@ -522,6 +522,6 @@ $config['rewrite_short_tags'] = FALSE;
 | Array:		array('10.0.1.200', '192.168.5.0/24')
 */
 $config['proxy_ips'] = '';
-$config['base_url'] = "http://localhost:8080/pavan-tours-in/";
-define('my_root_folder','/pavan-tours-in/');
+$config['base_url'] = "http://localhost:8080/sure-and-secure/";
+define('my_root_folder','/sure-and-secure/');
 // $config['base_url'] = "http://surensecuretravelsolutions.in";

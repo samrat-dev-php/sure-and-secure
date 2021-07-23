@@ -50,6 +50,7 @@
 					class="has_eae_slider has_ma_el_slider elementor-element elementor-element-1106ed3 elementor-section-content-middle elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section"
 					data-id="1106ed3" data-element_type="section"
 					data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+
 				<div class="elementor-container elementor-column-gap-extended">
 					<div class="elementor-row">
 						<div class="has_eae_slider has_ma_el_slider elementor-element elementor-element-3b4e00e elementor-column elementor-col-33 elementor-top-column"
@@ -274,6 +275,7 @@
 					</div>
 				</div>
 			</section>
+           <?php $this->load->view('/pages/home/contact_us_home'); ?>
 			<section
 					class="has_eae_slider has_ma_el_slider elementor-element elementor-element-05b6e73 elementor-section-stretched elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section"
 					data-id="05b6e73" data-element_type="section"

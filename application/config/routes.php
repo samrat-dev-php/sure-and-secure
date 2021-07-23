@@ -81,5 +81,6 @@ $route['admin/video-slider/add_post'] = 'AdminController/videoSliderAdd_post';
 $route['admin/video-slider/delete/(:any)'] = 'AdminController/videoSliderDelete/$1';
 $route['admin/video-slider/preview'] = 'AdminController/videoSliderPreview';
 
-// $route['send_email'] = 'HomeController/send_email';
+$route['send_email'] = 'HomeController/send_email';
+$route['contactus_home_post'] = 'HomeController/contactusHomePost';
 

@@ -1,7 +1,12 @@
 <style>
-	#img01 {
-		visibility: hidden;
+	.img01 {
+		/*visibility: hidden;*/
 	}
+	#snap {
+		height: 0;
+		overflow: hidden;
+	}
+
 </style>
 <div class="row">
 	<div class="col-sm-12 col-md-6 col-lg-6">
@@ -37,8 +42,8 @@
 						<textarea class="form-control" id="vslider_desc" name="vslider_desc" aria-label="With textarea"
 								  style="resize: none"></textarea>
 					</div>
-					<button type="submit" class="btn btn-primary">Save</button>
-
+					<button type="submit" class="btn btn-primary" id="save_slider">Save</button>
+					<div id="snap"></div>
 				</form>
 			</div>
 		</div>
@@ -109,6 +114,7 @@
 
 		$('#vslider_file').on('change', function (e) {
 			// let file = $(this).get(0).files[0];
+			$("#save_slider").attr('disabled','disabled');
 			var file = e.target.files[0];
 			let thumbSize = {
 				x: '665',
@@ -137,18 +143,23 @@
 				});
 				var snapImage = function () {
 					var canvas = document.createElement('canvas');
-					canvas.width = thumbSize.x; //video.videoWidth;
-					canvas.height = thumbSize.y; //video.videoHeight;
+					// canvas.width = thumbSize.x;
+					// canvas.height = thumbSize.y;
+					canvas.width = video.videoWidth;
+					canvas.height = video.videoHeight;
 					// console.log(canvas.width);
 					canvas.getContext('2d').drawImage(video, 0, 0, canvas.width, canvas.height);
 					var image = canvas.toDataURL();
 					var success = image.length > 100000;
 					if (success) {
+						$(".img01").remove();
 						var img = document.createElement('img');
 						img.src = image;
 						img.id = "img01";
-						document.getElementsByTagName('div')[0].appendChild(img);
-						$("#img01").css("display", "none");
+						img.className = "img01";
+						$("#snap").append(`<img src=${img.src} id="img01" class="img01"/>`);
+						// document.getElementsByTagName('div')[0].appendChild(img);
+						$("#save_slider").removeAttr('disabled');
 						URL.revokeObjectURL(src);
 					}
 					return success;

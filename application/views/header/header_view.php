@@ -117,9 +117,16 @@ defined('BASEPATH') or exit('No direct script access allowed');
                                                 </path>
                                             </svg></span></span></a>
 						<ul role="menu" class="dropdown-menu">
+							<li id="menu-item-513"
+								class="menu-item menu-item-type-post_type menu-item-object-page menu-item-513">
+								<a title="Home Stays" href="<?php echo site_url('home-stays/') ?>">Home Stays</a></li>
 							<li id="menu-item-512"
 								class="menu-item menu-item-type-post_type menu-item-object-page menu-item-512">
 								<a title="Car Service" href="<?php echo site_url('car-service/') ?>">Car Service</a>
+							</li>
+							<li id="menu-item-513"
+								class="menu-item menu-item-type-post_type menu-item-object-page menu-item-513">
+								<a title="Visa Consultancy" href="<?php echo site_url('ticket-service/') ?>">Ticket</a>
 							</li>
 							<li id="menu-item-513"
 								class="menu-item menu-item-type-post_type menu-item-object-page menu-item-513">
@@ -127,22 +134,15 @@ defined('BASEPATH') or exit('No direct script access allowed');
 									Consultancy</a></li>
 							<li id="menu-item-513"
 								class="menu-item menu-item-type-post_type menu-item-object-page menu-item-513">
-								<a title="Visa Consultancy" href="<?php echo site_url('ticket-service/') ?>">Ticket</a>
-							</li>
+								<a title="Visa Consultancy" href="<?php echo site_url('priest/') ?>">Priest</a></li>
 							<li id="menu-item-513"
 								class="menu-item menu-item-type-post_type menu-item-object-page menu-item-513">
 								<a title="Visa Consultancy" href="<?php echo site_url('guide-service/') ?>">Guide</a>
 							</li>
 							<li id="menu-item-513"
 								class="menu-item menu-item-type-post_type menu-item-object-page menu-item-513">
-								<a title="Visa Consultancy" href="<?php echo site_url('blogger/') ?>">Accomodation</a>
+								<a title="Visa Consultancy" href="<?php echo site_url('blogger/') ?>">Hotel</a>
 							</li>
-							<li id="menu-item-513"
-								class="menu-item menu-item-type-post_type menu-item-object-page menu-item-513">
-								<a title="Visa Consultancy" href="<?php echo site_url('priest/') ?>">Priest</a></li>
-							<li id="menu-item-513"
-								class="menu-item menu-item-type-post_type menu-item-object-page menu-item-513">
-								<a title="Home Stays" href="<?php echo site_url('home-stays/') ?>">Home Stays</a></li>
 						</ul>
 					</li>
 					<li id="menu-item-1256"
@@ -151,7 +151,6 @@ defined('BASEPATH') or exit('No direct script access allowed');
 					<li id="menu-item-1256"
 						class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1256"><a
 								title="Login" href="<?php echo site_url('login/') ?>">Login</a></li>
-
 				</ul>
 			</div>
 		</div>
