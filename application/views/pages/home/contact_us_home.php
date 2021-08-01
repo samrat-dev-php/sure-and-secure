@@ -15,11 +15,11 @@
 							<h2 class="title pl-3 pt-0 pb-3">Contact us</h2>
 							<div class="form-group col-md-12">
 								<input type="text" class="form-control"
-									   placeholder="Name" name="c_name"/>
+									   placeholder="Name" name="c_name" autocomplete="on"/>
 							</div>
 							<div class="form-group col-md-12">
 								<input type="email" class="form-control"
-									   placeholder="E-mail" name="c_email"/>
+									   placeholder="E-mail" name="c_email" autocomplete="on"/>
 							</div>
 							<div class="form-group col-md-12">
 								<input type="text" class="form-control"
@@ -30,12 +30,40 @@
 									   placeholder="Address" name="c_address"/>
 							</div>
 							<div class="form-group col-md-12">
-								<input type="text" class="form-control"
-									   placeholder="Destination" name="c_destination"/>
+								<label for="ddlDestination" class="form-label">Destination</label>
+								<input class="form-control" list="destinationOptions" id="ddlDestination"
+									   name="c_destination"
+									   placeholder="Type to search Destination..." autocomplete="off">
+								<datalist id="destinationOptions">
+									<?php if (isset($email_rows)): ?>
+									<?php foreach ($email_rows
+
+									as $row): ?>
+									<option value="<?php echo $row->location; ?>">
+										<?php endforeach; ?>
+										<?php endif; ?>
+									<option value="Others">
+								</datalist>
+								<input type="text" class="form-control d-none"
+									   placeholder="others destination" id="others_destination" name="c_others_destination"/>
 							</div>
 							<div class="form-group col-md-12">
-								<input type="text" class="form-control"
-									   placeholder="Referral Code" name="c_referral_code"/>
+								<input type="number" min="1" max="10000" class="form-control"
+									   placeholder="No of People" name="c_people_no"/>
+							</div>
+							<div class="form-group col-md-12">
+								<label for="ddlVia" class="form-label">Via</label>
+								<input class="form-control" list="viaOptions" id="ddlVia" name="c_via"
+									   placeholder="Type to search..." autocomplete="off">
+								<datalist id="viaOptions">
+									<?php if (isset($via_rows)): ?>
+									<?php foreach ($via_rows
+
+									as $row): ?>
+									<option value="<?php echo $row; ?>">
+										<?php endforeach; ?>
+										<?php endif; ?>
+								</datalist>
 							</div>
 							<div class="form-group col-md-12">
 								<button type="submit" class="btn btn-dark btn-block">Send</button>

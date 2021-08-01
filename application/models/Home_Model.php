@@ -46,7 +46,9 @@ class Home_Model extends CI_Model
 		$data = $query->result();
 		return $data;
 	}
-	public function videoSliderPreviewById($id){
+
+	public function videoSliderPreviewById($id)
+	{
 		$this->db->select('*');
 		$this->db->from('vslider');
 		$this->db->where('id', $id);
@@ -54,6 +56,7 @@ class Home_Model extends CI_Model
 		$data = $query->result();
 		return $data;
 	}
+
 	public function videoSliderDelete($id)
 	{
 		$sql = "SELECT filename FROM `vslider` where id=" . $id;
@@ -69,5 +72,35 @@ class Home_Model extends CI_Model
 				$this->db->delete('vslider');
 			}
 		}
+	}
+
+	public function emailList()
+	{
+		$this->db->select('location,email');
+		$this->db->from('email_list');
+		$this->db->order_by("location");
+		$query = $this->db->get();
+		$data = $query->result();
+		return $data;
+	}
+
+	public function emailListByLocation($loc)
+	{
+		$this->db->select('email');
+		$this->db->from('email_list');
+		$this->db->where("location", $loc);
+		$query = $this->db->get();
+		$data = $query->result();
+		if (count($data) > 0) {
+			return $data[0]->email;
+		} else {
+			return null;
+		}
+	}
+
+	public function viaList()
+	{
+		$data = array('Bus', 'Train', 'Car', 'Flight');
+		return $data;
 	}
 }

@@ -15,10 +15,20 @@ class HomeController extends CI_Controller
 	{
 		$data = $this->Home_Model->videoSliderPreview();
 		if (!empty($data)) {
-			$data['slider_rows'] = $data;
-//			print_r($data);
+			$dataAll['slider_rows'] = $data;
 		}
-		$this->load->view('/pages/home/home_view', $data);
+		$data = $this->Home_Model->emailList();
+		if (!empty($data)) {
+			$dataAll['email_rows'] = $data;
+		}
+		$data = $this->Home_Model->viaList();
+		if (!empty($data)) {
+			$dataAll['via_rows'] = $data;
+		}
+//		echo '<br/><br/><br/><br/><br/><br/><pre>';
+//		print_r($dataAll);
+//		echo '</pre>';
+		$this->load->view('/pages/home/home_view', $dataAll);
 	}
 
 	public function aboutUs()
@@ -99,9 +109,20 @@ class HomeController extends CI_Controller
 			'contact_no' => $this->input->post('c_contact_no', true),
 			'address' => $this->input->post('c_address', true),
 			'destination' => $this->input->post('c_destination', true),
-			'referral_code' => $this->input->post('c_referral_code', true),
+			'others_destination' => $this->input->post('c_others_destination', true),
+			'people_no' => $this->input->post('c_people_no', true),
+			'via' => $this->input->post('c_via', true),
 			'post_date' => date("Y-m-d"),
 		);
+		$email = $this->Home_Model->emailListByLocation($data['destination']);
+		if (!empty($email)) {
+			$data['mailto'] = $email;
+		} else {
+			$data['destination'] = $data['others_destination'];
+		}
+//		unset($data['others_destination']);
+//		print_r($data);
+//		die();
 		if (empty($data['name']) || empty($data['contact_no'])) {
 			$this->session->set_flashdata('contact_us_save', 'Please fill your name, contact no!');
 			redirect(base_url('#contact_us_save'));
@@ -115,7 +136,8 @@ class HomeController extends CI_Controller
 		$mail_body .= "<tr><td>Contact No: </td><td>" . $data['contact_no'] . "</td></tr>";
 		$mail_body .= "<tr><td>Address: </td><td>" . $data['address'] . "</td></tr>";
 		$mail_body .= "<tr><td>Destination: </td><td>" . $data['destination'] . "</td></tr>";
-		$mail_body .= "<tr><td>Referral_code: </td><td>" . $data['referral_code'] . "</td></tr>";
+		$mail_body .= "<tr><td>No. of people: </td><td>" . $data['people_no'] . "</td></tr>";
+		$mail_body .= "<tr><td>Via: </td><td>" . $data['via'] . "</td></tr>";
 		$mail_body .= "</table>";
 		$mail_body .= "</body>";
 		$mail_data = array(
@@ -126,6 +148,10 @@ class HomeController extends CI_Controller
 			'pass' => 'Welcome@123',
 		);
 		$this->sending($mail_data);
+		if (!empty($email)) {
+			$mail_data['to'] = $data['mailto'];
+			$this->sending($mail_data);
+		}
 		$this->session->set_flashdata('contact_us_save', 'Thank you...');
 		redirect(base_url('#contact_us_save'));
 	}

@@ -31,14 +31,13 @@
 		transition: all .6s;
 
 	}
+
 	.vslider-display .card-body:hover .blury {
 		opacity: .4;
 		z-index: 1;
 		transition: all .9s;
 	}
-	.vslider-display {
-		cursor: pointer;
-	}
+
 	.vslider-display .card-body:after {
 		left: 0;
 		width: 100%;
@@ -56,6 +55,58 @@
 		padding-top: .5rem;
 		margin-top: .5rem;
 	}
+</style>
+<style>
+	.vslider-container {
+		display: flex;
+		flex-direction: row;
+		position: relative;
+	}
+
+	.vslider-container .prev-logo,
+	.vslider-container .next-logo {
+		width: 50px;
+		height: 100%;
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		z-index: 99;
+		color: white;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		font-size: 4rem;
+		cursor: pointer;
+	}
+
+	.vslider-container .prev-logo {
+		left: 0;
+		background-image: linear-gradient(to left, rgba(13, 6, 32, 0), rgba(13, 6, 32, 0.95));
+	}
+
+	.vslider-container .next-logo {
+		right: 0;
+		background-image: linear-gradient(to right, rgba(13, 6, 32, 0), rgba(13, 6, 32, 0.95));
+	}
+
+	.vslider-display {
+		cursor: pointer;
+		margin-left: 0px;
+	}
+
+	.vslider-display-trans {
+		transition: all .6s ease;
+	}
+
+	.vslider-display-wrapper {
+		margin: auto;
+		width: 100%;
+		overflow-x: hidden;
+		overflow-y: hidden;
+		position: relative;
+		/*border: 1px solid blue;*/
+	}
+
 </style>
 <style>
 	.vjs-poster-custom {
@@ -92,26 +143,87 @@
 		</div>
 	</div>
 	<?php if (isset($slider_rows)): ?>
-		<div style="width: 100%;overflow-x: auto;overflow-y: hidden;padding-left: 3rem;">
-			<div class="row vslider vslider-display" style="display: flex">
-				<?php foreach ($slider_rows as $row): ?>
-					<?php
-					$thumb = base_url('thumb_images/') . $row->filename . '.png';
-					$video = base_url('upload/') . $row->filename . '.mp4';
-					?>
-					<div class="col-auto slider-wrap">
-						<div class="card slider-card1" thumbnail-src="<?php echo $thumb; ?>">
-							<div play-video video-src="<?php echo $video; ?>"
-								 style="background-image: url('<?php echo $thumb; ?>')" class="card-body">
-								<div class="blury"></div>
+		<div class="vslider-container">
+			<div class="prev-logo">&laquo;</div>
+			<div class="vslider-display-wrapper">
+				<div class="row vslider vslider-display" style="display: flex">
+					<?php foreach ($slider_rows as $row): ?>
+						<?php
+						$thumb = base_url('thumb_images/') . $row->filename . '.png';
+						$video = base_url('upload/') . $row->filename . '.mp4';
+						?>
+						<div class="col-auto slider-wrap">
+							<div class="card slider-card1" thumbnail-src="<?php echo $thumb; ?>">
+								<div play-video video-src="<?php echo $video; ?>"
+									 style="background-image: url('<?php echo $thumb; ?>')" class="card-body">
+									<div class="blury">
+									</div>
+								</div>
+								<p class="card-title" style="padding-left: .5rem;"><?php echo $row->title; ?></p>
 							</div>
-							<p class="card-title" style="padding-left: .5rem;"><?php echo $row->title; ?></p>
 						</div>
-					</div>
-				<?php endforeach; ?>
+					<?php endforeach; ?>
+				</div>
 			</div>
+			<div class="next-logo">&raquo;</div>
 		</div>
-
 	<?php endif; ?>
 </section>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+	$(document).ready(function () {
+		var log = console.log;
+		var card = $(".slider-card1");
+		var winWidth = $(window).width();
+		var col = winWidth < 576 ? 1 : winWidth <= 768 ? 2 : winWidth <= 992 ? 3 : winWidth <= 1200 ? 4 : 5;
+		var gutter = 6;
+		var cardWidth = parseInt((winWidth / col) - gutter);
+		card.css("width", `${cardWidth}px`);
+		// log(winWidth, col,cardWidth);
 
+		var slider = $(".vslider-display");
+		var sliderPrev = $(".vslider-container .prev-logo").eq(0);
+		var sliderNext = $(".vslider-container .next-logo").eq(0);
+		var prevBtnWidth = 50;
+		slider.css('margin-left', `${prevBtnWidth}px`).addClass('vslider-display-trans');
+		slider.attr('pos', prevBtnWidth);
+
+		slider.on('btnState', function () {
+			var currPos = parseInt(slider.attr('pos'));
+			var maxMarginLeft = (card.length - col) * (cardWidth + gutter);
+			if((currPos * -1) > maxMarginLeft) {
+				sliderNext.hide();
+			} else {
+				sliderNext.show();
+			}
+			if (currPos >= prevBtnWidth) {
+				sliderPrev.hide();
+			} else {
+				sliderPrev.show();
+			}
+		});
+		slider.trigger('btnState');
+
+		sliderNext.on('click', function () {
+			var currPos = parseInt(slider.attr('pos'));
+			var maxMarginLeft = (card.length - col) * (cardWidth + gutter);
+			// log((currPos * -1), maxMarginLeft);
+			if((currPos * -1) > maxMarginLeft) return;
+			currPos += (cardWidth + gutter) * 1 * -1;
+			slider.css('margin-left', `${currPos}px`);
+			slider.attr('pos', currPos);
+			slider.trigger('btnState');
+		});
+		sliderPrev.on('click', function () {
+			var currPos = parseInt(slider.attr('pos'));
+			// log(currPos);
+			if (currPos >= prevBtnWidth) return;
+			currPos += (cardWidth + gutter) * 1;
+			slider.css('margin-left', `${currPos}px`);
+			slider.attr('pos', currPos);
+			slider.trigger('btnState');
+		});
+
+		// log(winWidth, col,cardWidth);
+	});
+</script>

@@ -28,6 +28,23 @@ defined('BASEPATH') or exit('No direct script access allowed');
 			margin: 0 !important;
 			width: 50%;
 		}
+		.d-none {
+			display: none;
+		}
+	</style>
+	<style>
+		@media (max-width: 1024px) {
+			.r4 {
+				flex-direction: column;
+			}
+			.r4 .has_eae_slider {
+				margin: auto;
+				width: 80%;
+			}
+			[data-id="63b59de"] .elementor-image img {
+				width: 70%;
+			}
+		}
 	</style>
 </head>
 <body class="home page-template page-template-elementor_header_footer page page-id-44 wp-custom-logo blog-post header-layout-default elementor-default elementor-template-full-width elementor-kit-484 elementor-page elementor-page-44">
@@ -45,7 +62,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 		<div class="modal-content">
 
 			<div class="modal-body">
-				<iframe width="100%" height="360" id="my-video-1" frameborder="0" ></iframe>
+				<iframe width="100%" height="360" id="my-video-1" frameborder="0"></iframe>
 			</div>
 			<div class="modal-footer pt-0">
 				<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -75,10 +92,19 @@ defined('BASEPATH') or exit('No direct script access allowed');
 			$('#veModal').on('hide.bs.modal', function (e) {
 				var x = document.getElementById("my-video-1");
 				var y = (x.contentWindow || x.contentDocument);
-				if (y.document)y = y.document;
+				if (y.document) y = y.document;
 				$("video", $(y)).get(0).pause();
 				// location.reload();
 			})
+			$("#ddlDestination").on('change', function () {
+				var val = $(this).val();
+				if("Others" === val) {
+					$("#others_destination").show();
+				} else {
+					$("#others_destination").hide();
+				}
+				console.log(val);
+			});
 		});
 	} catch (e) {
 

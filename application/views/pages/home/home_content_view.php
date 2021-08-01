@@ -275,7 +275,7 @@
 					</div>
 				</div>
 			</section>
-           <?php $this->load->view('/pages/home/contact_us_home'); ?>
+			<?php $this->load->view('/pages/home/contact_us_home'); ?>
 			<section
 					class="has_eae_slider has_ma_el_slider elementor-element elementor-element-05b6e73 elementor-section-stretched elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section"
 					data-id="05b6e73" data-element_type="section"
@@ -1442,50 +1442,125 @@
 															 role="tabpanel"
 															 aria-labelledby="ma-accordion-tab-title-4111">
 															<p>Briefing about Chardham Yatra.
- 
-‘Char Dham’, the most sacred pilgrimage circuit, the circuit of mythologies, the circuit that cossets four abodes of God; you can simply go on defining these two words in different and beautiful ways.
-This pilgrimage was initiated by sage Adi Shankaracharya, a great Hindu intellectual and reformer. The sage started this holy journey in the 8th century with the motive of reviving the Hindu religion, and certainly the four destinations were perfect to serve his purpose. Yamunotri (the abode of Shakti Yamuna), Gangotri (the abode of Shakti Ganga), Kedarnath (the abode of Lord Shiva) and Badrinath (the abode of Lord Vishnu) are the four holy places embracing the foothills of the Garhwal Himalayas, Uttarakhand.
-It is believed that by visiting this pious circuit, all the sins of the devotees are forgiven; are washed off. Since ages, this belief is so prominent that the Char Dham Yatra is considered as a must for every human. Further, it is not just that people come here for getting salvation; they visit these holy sites so as to attain enlightenment, to experience serenity and spirituality.
-The Char Dham pilgrimage in Uttarakhand commences from April-May and lasts till Diwali (one of the most celebrated Hindu festivals), in October-November.
+
+																‘Char Dham’, the most sacred pilgrimage circuit, the
+																circuit of mythologies, the circuit that cossets four
+																abodes of God; you can simply go on defining these two
+																words in different and beautiful ways.
+																This pilgrimage was initiated by sage Adi
+																Shankaracharya, a great Hindu intellectual and reformer.
+																The sage started this holy journey in the 8th century
+																with the motive of reviving the Hindu religion, and
+																certainly the four destinations were perfect to serve
+																his purpose. Yamunotri (the abode of Shakti Yamuna),
+																Gangotri (the abode of Shakti Ganga), Kedarnath (the
+																abode of Lord Shiva) and Badrinath (the abode of Lord
+																Vishnu) are the four holy places embracing the foothills
+																of the Garhwal Himalayas, Uttarakhand.
+																It is believed that by visiting this pious circuit, all
+																the sins of the devotees are forgiven; are washed off.
+																Since ages, this belief is so prominent that the Char
+																Dham Yatra is considered as a must for every human.
+																Further, it is not just that people come here for
+																getting salvation; they visit these holy sites so as to
+																attain enlightenment, to experience serenity and
+																spirituality.
+																The Char Dham pilgrimage in Uttarakhand commences from
+																April-May and lasts till Diwali (one of the most
+																celebrated Hindu festivals), in October-November.
 															</p>
 															<ul>
-																<li><strong>DAY 01: DELHI</strong>: HARIDWAR (215 KMS. 07 HRS)
- 
-Morning upon arrival at Delhi Railway Station. meet and drive to Haridwar, on arrival at Haridwar check in at after fresh n up evening visit Ganga Arti & dip in holy river Ganga.
+																<li><strong>DAY 01: DELHI</strong>: HARIDWAR (215 KMS.
+																	07 HRS)
+
+																	Morning upon arrival at Delhi Railway Station. meet
+																	and drive to Haridwar, on arrival at Haridwar check
+																	in at after fresh n up evening visit Ganga Arti &
+																	dip in holy river Ganga.
 																</li>
-																<li><strong>DAY 02: HARIDWAR</strong>: BARKOT (215 KMS. 07 HRS)
- 
-Morning after breakfast check out from hotel & drive to Barkot, via Mussoorie, and en-route visit Kempty fall. Later continue drive to Barkot. On arrival Barkot Check In at Hotel. Overnight stay at hotel.
+																<li><strong>DAY 02: HARIDWAR</strong>: BARKOT (215 KMS.
+																	07 HRS)
+
+																	Morning after breakfast check out from hotel & drive
+																	to Barkot, via Mussoorie, and en-route visit Kempty
+																	fall. Later continue drive to Barkot. On arrival
+																	Barkot Check In at Hotel. Overnight stay at hotel.
 																</li>
-																<li><strong>DAY 03: BARKOT - YAMUNOTRI - BARKOT (42 KMS DRIVE / 06 KMS TREK)
-</strong>: Morning leave for Janki Chatti via Hanuman Chatti & Fool Chatti. On arrival Janki Chatti start the Trek of 06 Kms for Yamunotri, On Arrive Yamunotri Holi Dip in Garam Kund, than Pooja and Darshan of Shree Yamunotri Ji, after Darshan and Pooja, afternoon start the trek back to Janki Chatti on arrival Janki Chatti meet with driver and drive back to Barkot. Overnight stay at Hotel.
+																<li><strong>DAY 03: BARKOT - YAMUNOTRI - BARKOT (42 KMS
+																		DRIVE / 06 KMS TREK)
+																	</strong>: Morning leave for Janki Chatti via
+																	Hanuman Chatti & Fool Chatti. On arrival Janki
+																	Chatti start the Trek of 06 Kms for Yamunotri, On
+																	Arrive Yamunotri Holi Dip in Garam Kund, than Pooja
+																	and Darshan of Shree Yamunotri Ji, after Darshan and
+																	Pooja, afternoon start the trek back to Janki Chatti
+																	on arrival Janki Chatti meet with driver and drive
+																	back to Barkot. Overnight stay at Hotel.
 																</li>
-																																<li><strong>DAY 04: BARKOT - UTTARKASHI (DRIVE 82 KMS, 04 HRS)
-</strong>: Morning leave for Uttarkashi, a drive of 82 Kms. En-route visit Prakateshwar Cave, on arrival Uttarkashi check in at the hotel evening visit Vishwnath Temple, Overnight stay at the hotel.
+																<li><strong>DAY 04: BARKOT - UTTARKASHI (DRIVE 82 KMS,
+																		04 HRS)
+																	</strong>: Morning leave for Uttarkashi, a drive of
+																	82 Kms. En-route visit Prakateshwar Cave, on arrival
+																	Uttarkashi check in at the hotel evening visit
+																	Vishwnath Temple, Overnight stay at the hotel.
 																</li>
-																																<li><strong>DAY 05: UTTARKASHI - GANGOTRI – UTTARKASHI (100 KMS. PER WAY)
-</strong>: Early morning drive to Gangotri and on arrival take a holy dip in the sacred river Ganges, also called Bhagirathi at its origin. Perform Pooja after that and relax for some time in the lovely surroundings, afternoon drive to back to Uttarkashi, on arrival check into the Hotel for overnight stay.
+																<li><strong>DAY 05: UTTARKASHI - GANGOTRI – UTTARKASHI
+																		(100 KMS. PER WAY)
+																	</strong>: Early morning drive to Gangotri and on
+																	arrival take a holy dip in the sacred river Ganges,
+																	also called Bhagirathi at its origin. Perform Pooja
+																	after that and relax for some time in the lovely
+																	surroundings, afternoon drive to back to Uttarkashi,
+																	on arrival check into the Hotel for overnight stay.
 																</li>
-																																<li><strong>DAY 06: UTTARKASHI - GUPTKASHI (223 KMS. DRIVE 09 - 10 HRS)
-</strong>: Morning drive to Guptkashi, en-route visit Tehri Dam & continue journey toward Guptkashi. Upon arrival in check-in at hotel. Later in the evening visit Kashi Vishwnath Temple, Ardh Narishwar Temple, Overnight stay at the Hotel.
+																<li><strong>DAY 06: UTTARKASHI - GUPTKASHI (223 KMS.
+																		DRIVE 09 - 10 HRS)
+																	</strong>: Morning drive to Guptkashi, en-route
+																	visit Tehri Dam & continue journey toward Guptkashi.
+																	Upon arrival in check-in at hotel. Later in the
+																	evening visit Kashi Vishwnath Temple, Ardh Narishwar
+																	Temple, Overnight stay at the Hotel.
 																</li>
-																																<li><strong>DAY 07: GUPTAKASHI – SONPRAYAG - KEDARNATH (27 KMS DRIVE, 19 KMS. TREK)
-</strong>: Morning drive to Sonprayag Via Guptkashi on arrival trek start Kedarnath via Gaurikund, Bheembali, Garuechati, on Arrival Pooja and Darshan, back to Overnight stay at Sonprayag .
+																<li><strong>DAY 07: GUPTAKASHI – SONPRAYAG - KEDARNATH
+																		(27 KMS DRIVE, 19 KMS. TREK)
+																	</strong>: Morning drive to Sonprayag Via Guptkashi
+																	on arrival trek start Kedarnath via Gaurikund,
+																	Bheembali, Garuechati, on Arrival Pooja and Darshan,
+																	back to Overnight stay at Sonprayag .
 
 																</li>
-																																<li><strong>DAY 08: KEDARNATH – SONPRAYAG - PIPALKOTI (19 KMS TREK 140 KMS DRIVE)
-</strong>: Early Morning Pooja and darshan at the Temple, Morning trek down to Sonprayag, on arrival meet with driver and drive to Pipalkoti, upon arrival check in at hotel for overnight stay.
+																<li><strong>DAY 08: KEDARNATH – SONPRAYAG - PIPALKOTI
+																		(19 KMS TREK 140 KMS DRIVE)
+																	</strong>: Early Morning Pooja and darshan at the
+																	Temple, Morning trek down to Sonprayag, on arrival
+																	meet with driver and drive to Pipalkoti, upon
+																	arrival check in at hotel for overnight stay.
 
 																</li>
-																																<li><strong>DAY 09: PIPALKOTI – JOSHIMATH (155 KMS 08 HRS.)
-</strong>: Morning leave for Joshimath. On arrival check into hotel. Later visit Narsingh Temple, and Adi Shankracharya Math at Joshimath, later drive to Badrinath On arrival take the holy Darshan and spend time visiting Mana village the last village before the Tibetan border, Byas Gufa, Bheem Pul, Saraswati River, Overnight stay at hotel.
+																<li><strong>DAY 09: PIPALKOTI – JOSHIMATH (155 KMS 08
+																		HRS.)
+																	</strong>: Morning leave for Joshimath. On arrival
+																	check into hotel. Later visit Narsingh Temple, and
+																	Adi Shankracharya Math at Joshimath, later drive to
+																	Badrinath On arrival take the holy Darshan and spend
+																	time visiting Mana village the last village before
+																	the Tibetan border, Byas Gufa, Bheem Pul, Saraswati
+																	River, Overnight stay at hotel.
 																</li>
-																																<li><strong>DAY 10: JOSHIMATH - SRINAGAR (195 KMS 08 HRS)
-</strong>: Early Morning Pooja & Darshan at the Temple. Later drive to Srinagar, via Joshimath, Chamoli, Karanparyag, Rudraprayag on arrival check in at the Hotel for Overnight stay.
+																<li><strong>DAY 10: JOSHIMATH - SRINAGAR (195 KMS 08
+																		HRS)
+																	</strong>: Early Morning Pooja & Darshan at the
+																	Temple. Later drive to Srinagar, via Joshimath,
+																	Chamoli, Karanparyag, Rudraprayag on arrival check
+																	in at the Hotel for Overnight stay.
 
 																</li>
-																																<li><strong>DAY 11: SRINAGAR - HARIDWAR (117 KMS 5 HRS)
-</strong>: Morning drive to Haridwar. En-route visits the Confluence of Bhagirathi and Alaknanda River which is called Devprayag. Than continue drive towards Haridwar after reaching there check in at hotel , dinner & overnight stay at Hotel.
+																<li><strong>DAY 11: SRINAGAR - HARIDWAR (117 KMS 5 HRS)
+																	</strong>: Morning drive to Haridwar. En-route
+																	visits the Confluence of Bhagirathi and Alaknanda
+																	River which is called Devprayag. Than continue drive
+																	towards Haridwar after reaching there check in at
+																	hotel , dinner & overnight stay at Hotel.
 
 																</li>
 															</ul>
@@ -1902,7 +1977,8 @@ Morning after breakfast check out from hotel & drive to Barkot, via Mussoorie, a
 																at Hotel.
 																<br/>
 																<br/>
-																<b>DAY 04: </b> SOMNATH – VIRPUR – GONDAL – AHMEDABAD<br/>
+																<b>DAY 04: </b> SOMNATH – VIRPUR – GONDAL –
+																AHMEDABAD<br/>
 																Today, after breakfast proceed to Ahmedabad. Enroute
 																visit Jalaram Temple at Virpur. Also visit Swaminarya
 																temple, Navlakha Palace and Vintage Car museum at
@@ -2472,11 +2548,12 @@ Morning after breakfast check out from hotel & drive to Barkot, via Mussoorie, a
 					</div>
 				</div>
 			</section>
+
 			<section
 					class="has_eae_slider has_ma_el_slider elementor-element elementor-element-3b290b2 elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section"
 					data-id="3b290b2" data-element_type="section">
 				<div class="elementor-container elementor-column-gap-default">
-					<div class="elementor-row">
+					<div class="elementor-row r4">
 						<div class="has_eae_slider has_ma_el_slider elementor-element elementor-element-81dbedd elementor-column elementor-col-25 elementor-top-column"
 							 data-id="81dbedd" data-element_type="column">
 							<div class="elementor-column-wrap  elementor-element-populated">
@@ -3231,7 +3308,7 @@ Morning after breakfast check out from hotel & drive to Barkot, via Mussoorie, a
 				</div>
 			</section>
 			<?php if (isset($slider_rows)): ?>
-			<?php $this->load->view('/admin/pages/video_slider/preview_user', $slider_rows); ?>
+				<?php $this->load->view('/admin/pages/video_slider/preview_user', $slider_rows); ?>
 			<?php endif; ?>
 			<section
 					class="has_eae_slider has_ma_el_slider elementor-element elementor-element-bb846d2 elementor-section-stretched elementor-hidden-desktop elementor-hidden-tablet elementor-hidden-phone elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section"
